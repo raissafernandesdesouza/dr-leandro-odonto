@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="Odontologia com cuidado, tecnologia digital e atendimento completo em Cambuí, MG. Agende sua consulta com a Clínica Dr. Leandro Possato.">
+  <title>Clínica Dr. Leandro Possato | Odontologia em Cambuí</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f7f2;
+      --white: #fff;
+      --ink: #173a3b;
+      --muted: #587272;
+      --teal: #167c7d;
+      --aqua: #c9e8e4;
+      --line: #dce5df;
+      --coral: #e27a60;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image: radial-gradient(#dce8e1 0.65px, transparent 0.65px);
+      background-size: 15px 15px;
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .topline { height: 5px; background: var(--teal); }
+
+    header {
+      position: relative;
+      z-index: 5;
+      border-bottom: 1px solid rgba(23, 58, 59, .11);
+      background: rgba(246, 247, 242, .94);
+    }
+    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-copy { display: grid; gap: 2px; }
+    .brand-copy strong { font-size: 14px; letter-spacing: .02em; }
+    .brand-copy span { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-area { display: flex; align-items: center; gap: 32px; }
+    nav { display: flex; gap: 27px; }
+    nav a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s ease; }
+    nav a:hover { color: var(--teal); }
+    .button {
+      display: inline-flex;
+      min-height: 47px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid var(--teal);
+      border-radius: 3px;
+      background: var(--teal);
+      color: var(--white);
+      font: 600 13px var(--sans);
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .button:hover { background: #11696a; transform: translateY(-2px); }
+    .button-light { background: transparent; color: var(--ink); border-color: var(--line); }
+    .button-light:hover { color: var(--white); border-color: var(--teal); }
+    .menu-button { display: none; }
+
+    .hero { padding: 68px 0 78px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 58px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { width: 26px; height: 1px; background: var(--coral); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 610px; margin: 24px 0 20px; font: 400 clamp(48px, 5.4vw, 72px)/1.02 var(--serif); letter-spacing: 0; }
+    h1 em { color: var(--teal); font-weight: 400; }
+    .hero-copy { max-width: 450px; margin-bottom: 29px; color: var(--muted); font-size: 16px; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .rating { display: flex; align-items: center; gap: 13px; margin-top: 38px; }
+    .stars { color: #d78a34; font-size: 16px; letter-spacing: 2px; }
+    .rating-copy { display: grid; gap: 2px; }
+    .rating-copy strong { font-size: 13px; }
+    .rating-copy span { color: var(--muted); font-size: 11px; }
+    .hero-visual { position: relative; min-width: 0; }
+    .photo-frame { position: relative; padding: 12px; border: 1px solid #b5d8d1; background: var(--white); transform: rotate(1.2deg); }
+    .photo-frame img { display: block; width: 100%; aspect-ratio: 1.21; object-fit: cover; }
+    .photo-caption { position: absolute; right: 12px; bottom: 12px; left: 12px; display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: rgba(23, 58, 59, .88); color: var(--white); font-size: 11px; }
+    .photo-caption span:last-child { color: #b7e5df; }
+    .hero-note { position: absolute; top: 16%; right: -24px; display: grid; width: 122px; aspect-ratio: 1; align-content: center; justify-items: center; border-radius: 50%; background: var(--aqua); color: var(--ink); text-align: center; transform: rotate(8deg); }
+    .hero-note strong { font: 31px var(--serif); }
+    .hero-note span { max-width: 72px; font-size: 10px; line-height: 1.35; }
+
+    .proof-strip { border-block: 1px solid var(--line); background: rgba(255,255,255,.55); }
+    .proof-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .proof-item { display: flex; align-items: center; gap: 13px; min-height: 88px; padding: 15px 24px; border-right: 1px solid var(--line); }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border: 0; }
+    .proof-number { color: var(--teal); font: 30px var(--serif); }
+    .proof-label { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .proof-label strong { display: block; color: var(--ink); font-size: 13px; }
+
+    section { scroll-margin-top: 90px; }
+    .section-pad { padding: 96px 0; }
+    .section-heading { max-width: 620px; margin-bottom: 42px; }
+    .section-heading h2 { margin: 15px 0 13px; font: 400 clamp(37px, 4vw, 52px)/1.08 var(--serif); }
+    .section-heading p { max-width: 490px; margin-bottom: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .services { background: var(--white); }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--line); }
+    .service { min-height: 190px; padding: 26px 23px 24px 0; border-right: 1px solid var(--line); }
+    .service + .service { padding-left: 23px; }
+    .service:last-child { border: 0; }
+    .service-index { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+    .service h3 { margin: 23px 0 10px; font: 24px var(--serif); }
+    .service p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+    .technology { position: relative; padding: 92px 0; background: var(--ink); color: var(--white); overflow: hidden; }
+    .technology::after { position: absolute; top: -90px; right: 8%; width: 340px; height: 340px; border: 1px solid rgba(201,232,228,.18); border-radius: 50%; content: ""; }
+    .tech-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+    .technology .eyebrow { color: #9bd5cd; }
+    .technology h2 { max-width: 500px; margin: 19px 0; font: 400 clamp(40px, 4.5vw, 58px)/1.05 var(--serif); }
+    .technology p { max-width: 475px; margin: 0; color: #c3d3cf; font-size: 15px; line-height: 1.8; }
+    .tech-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255,255,255,.22); }
+    .tech-list span { padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,.22); color: #e7f2ef; font-size: 13px; }
+    .tech-list span:nth-child(odd) { margin-right: 18px; }
+    .tech-list span::before { margin-right: 10px; color: #9bd5cd; content: "+"; }
+
+    .reviews { background: #e6f1ed; }
+    .reviews-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .reviews-top .section-heading { margin-bottom: 35px; }
+    .review-score { display: flex; align-items: center; gap: 14px; padding-bottom: 44px; white-space: nowrap; }
+    .review-score strong { font: 42px var(--serif); }
+    .review-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review { min-height: 202px; padding: 23px; border: 1px solid #cbded7; background: rgba(255,255,255,.63); }
+    .review .stars { font-size: 13px; }
+    .review blockquote { margin: 20px 0 22px; font: 20px/1.35 var(--serif); }
+    .review cite { color: var(--muted); font-size: 11px; font-style: normal; }
+
+    .visit { padding: 92px 0 100px; }
+    .visit-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
+    .visit h2 { margin: 16px 0 15px; font: 400 48px/1.08 var(--serif); }
+    .visit-intro { max-width: 390px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .visit-details { border-top: 1px solid var(--line); }
+    .detail-row { display: grid; grid-template-columns: 125px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .detail-row dt { color: var(--muted); font-size: 12px; }
+    .detail-row dd { margin: 0; font-size: 13px; line-height: 1.6; }
+    .detail-row a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .visit-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 24px; }
+    .access-note { margin: 19px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    footer { padding: 27px 0; background: var(--ink); color: #e5efeb; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-inner span { font-size: 11px; }
+    .footer-inner a { color: #b7e5df; font-size: 12px; text-underline-offset: 3px; }
+
+    .reveal { animation: rise-in .7s both; }
+    .hero-visual { animation-delay: .13s; }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    @media (max-width: 900px) {
+      .hero-grid { gap: 36px; }
+      .hero-note { right: -15px; width: 102px; }
+      .nav-area { gap: 20px; }
+      nav { gap: 17px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .service:nth-child(2) { border-right: 0; }
+      .service:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .service:nth-child(3) { padding-left: 0; }
+      .visit-grid { gap: 44px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 38px, 520px); }
+      .header-inner { min-height: 72px; flex-wrap: wrap; gap: 0; }
+      .brand-copy strong { font-size: 12px; }
+      .brand-copy span { font-size: 9px; }
+      .menu-button { display: inline-flex; min-height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); font: 600 12px var(--sans); }
+      .nav-area { display: none; width: 100%; align-items: stretch; padding: 12px 0 18px; }
+      .nav-area.open { display: grid; }
+      nav { display: grid; gap: 0; }
+      nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .nav-area .button { margin-top: 12px; }
+      .hero { padding: 48px 0 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      h1 { max-width: 480px; margin-top: 18px; font-size: clamp(47px, 13vw, 64px); }
+      .hero-copy { font-size: 14px; }
+      .rating { margin-top: 28px; }
+      .hero-visual { width: calc(100% - 9px); margin-left: 4px; }
+      .hero-note { top: -21px; right: -11px; width: 90px; }
+      .hero-note strong { font-size: 25px; }
+      .proof-inner { grid-template-columns: 1fr; }
+      .proof-item, .proof-item:first-child { min-height: 67px; padding: 10px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .proof-number { min-width: 57px; font-size: 26px; }
+      .section-pad { padding: 67px 0; }
+      .section-heading { margin-bottom: 28px; }
+      .section-heading h2 { font-size: 42px; }
+      .section-heading p { font-size: 14px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service { min-height: 180px; padding: 20px 12px 20px 0; }
+      .service + .service { padding-left: 12px; }
+      .service:nth-child(3) { padding-left: 0; }
+      .service h3 { font-size: 21px; }
+      .service p { font-size: 12px; }
+      .technology { padding: 68px 0; }
+      .tech-grid { grid-template-columns: 1fr; gap: 30px; }
+      .technology h2 { font-size: 45px; }
+      .reviews-top { display: block; }
+      .review-score { padding: 0; margin: -10px 0 24px; }
+      .review-list { grid-template-columns: 1fr; gap: 10px; }
+      .review { min-height: auto; }
+      .review blockquote { font-size: 19px; }
+      .visit { padding: 67px 0 72px; }
+      .visit-grid { grid-template-columns: 1fr; gap: 30px; }
+      .visit h2 { font-size: 43px; }
+      .detail-row { grid-template-columns: 92px 1fr; gap: 12px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Clínica Dr. Leandro Possato, início">
+        <span class="brand-copy"><strong>Dr. Leandro Possato</strong><span>Odontologia · Cambuí, MG</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <div class="nav-area" id="main-nav">
+        <nav aria-label="Navegação principal">
+          <a href="#cuidados">Cuidados</a>
+          <a href="#tecnologia">Tecnologia</a>
+          <a href="#avaliacoes">Avaliações</a>
+          <a href="#visite">Onde estamos</a>
+        </nav>
+        <a class="button" href="https://wa.me/5535999462846" target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Cuidado que acolhe. Tecnologia que transforma.</div>
+          <h1>Um sorriso novo muda o jeito de <em>viver.</em></h1>
+          <p class="hero-copy">Odontologia completa para você e sua família, com atenção em cada etapa e recursos digitais para planejar o seu tratamento.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/5535999462846" target="_blank" rel="noopener noreferrer">Converse com a equipe <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="#cuidados">Conheça a clínica</a>
+          </div>
+          <div class="rating" aria-label="Nota 5 de 5, com 14 avaliações no Google">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="rating-copy"><strong>5,0 no Google</strong><span>14 avaliações de pacientes</span></span>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="photo-frame">
+            <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdD8_b17leAfmB-fzwkk4X-ns7UoUQhV4knqCYgR5ItIESyZ_lnssIaK1eQ5cSFuzPHndVQibBou9gf8EwsOYAmKCVEeFZvZEt1a5lmx3JvEr13ph5RpAyzpGDqYlQWpWg7-pdlyQ=w1200-h900-k-no" alt="Instrumentos odontológicos em uma bancada e luva azul durante um atendimento" fetchpriority="high">
+            <div class="photo-caption"><span>Clínica Dr. Leandro Possato</span><span>Cambuí · Minas Gerais</span></div>
+          </div>
+          <div class="hero-note" aria-label="5 estrelas no Google"><strong>5,0</strong><span>avaliação no Google</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-strip" aria-label="Destaques da clínica">
+      <div class="wrap proof-inner">
+        <div class="proof-item"><span class="proof-number">01</span><span class="proof-label"><strong>Equipe completa</strong>Especialistas em um só lugar</span></div>
+        <div class="proof-item"><span class="proof-number">02</span><span class="proof-label"><strong>Planejamento digital</strong>Escaneamento 3D e cirurgia guiada</span></div>
+        <div class="proof-item"><span class="proof-number">03</span><span class="proof-label"><strong>Atendimento acolhedor</strong>Cuidado para toda a família</span></div>
+      </div>
+    </div>
+
+    <section class="services section-pad" id="cuidados">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Cuidado completo</div>
+          <h2>Um time inteiro cuidando de você.</h2>
+          <p>Da prevenção aos tratamentos especializados, encontre o cuidado que precisa com uma equipe atenciosa e dedicada.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><span class="service-index">01 / IMPLANTES</span><h3>Implantes & próteses</h3><p>Planejamento digital e soluções protéticas para recuperar função e confiança.</p></article>
+          <article class="service"><span class="service-index">02 / ORTODONTIA</span><h3>Ortodontia</h3><p>Acompanhamento especializado para cuidar do alinhamento do seu sorriso.</p></article>
+          <article class="service"><span class="service-index">03 / ENDODONTIA</span><h3>Tratamento de canal</h3><p>Cuidado endodôntico com atenção ao seu conforto em cada consulta.</p></article>
+          <article class="service"><span class="service-index">04 / CLÍNICA GERAL</span><h3>Clínica geral</h3><p>Prevenção, avaliação e cuidados odontológicos para todas as fases da vida.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="technology" id="tecnologia">
+      <div class="wrap tech-grid">
+        <div>
+          <div class="eyebrow">Odontologia digital</div>
+          <h2>Tecnologia a favor de um resultado natural.</h2>
+          <p>Na prótese protocolo de Branemark com carga imediata, cada etapa é planejada para unir função, estética e conforto. Um tratamento pensado para devolver segurança ao sorrir.</p>
+        </div>
+        <div class="tech-list" aria-label="Etapas do planejamento digital">
+          <span>Planejamento digital</span>
+          <span>Escaneamento 3D</span>
+          <span>Cirurgia guiada</span>
+          <span>Carga imediata</span>
+          <span>Prótese protocolo Branemark</span>
+          <span>Resultado natural e confortável</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews section-pad" id="avaliacoes">
+      <div class="wrap">
+        <div class="reviews-top">
+          <div class="section-heading">
+            <div class="eyebrow">Quem já esteve aqui</div>
+            <h2>Confiança que se constrói no cuidado.</h2>
+          </div>
+          <div class="review-score"><span class="stars" aria-hidden="true">★★★★★</span><strong>5,0</strong><span class="proof-label">14 avaliações<br>no Google</span></div>
+        </div>
+        <div class="review-list">
+          <article class="review"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>“Atendimento de excelência, equipe completa e atenciosa.”</blockquote><cite>Valeria Oliveira · avaliação no Google</cite></article>
+          <article class="review"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>“Minha experiência foi ótima, excelente profissional, super atencioso e dedicado.”</blockquote><cite>Zaqueu Martins · avaliação no Google</cite></article>
+          <article class="review"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>“Virou a clínica da minha família, trabalho bom e de confiança.”</blockquote><cite>Aline Aparecida · avaliação no Google</cite></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visite">
+      <div class="wrap visit-grid">
+        <div>
+          <div class="eyebrow">Estamos em Cambuí</div>
+          <h2>Vai ser um prazer receber você.</h2>
+          <p class="visit-intro">Agende seu horário com a equipe e venha conhecer um espaço preparado para cuidar do seu sorriso.</p>
+          <div class="visit-actions">
+            <a class="button" href="https://wa.me/5535999462846" target="_blank" rel="noopener noreferrer">Agendar consulta <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="https://www.google.com/maps/dir/?api=1&destination=Cl%C3%ADnica+Dr.+Leandro+Possato%2C+R.+Jo%C3%A3o+Moreira+Salles%2C+751%2C+Cambu%C3%AD+-+MG" target="_blank" rel="noopener noreferrer">Como chegar <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div>
+          <dl class="visit-details">
+            <div class="detail-row"><dt>Endereço</dt><dd>R. João Moreira Salles, 751 — Centro<br>Cambuí — MG, 37600-000</dd></div>
+            <div class="detail-row"><dt>Telefone</dt><dd><a href="tel:+5535999462846">(35) 99946-2846</a></dd></div>
+            <div class="detail-row"><dt>Agendamento</dt><dd>Atendimento com hora marcada</dd></div>
+            <div class="detail-row"><dt>Pagamentos</dt><dd>Cartão de crédito, débito e pagamento por aproximação</dd></div>
+          </dl>
+          <p class="access-note">A clínica possui banheiro com acessibilidade para pessoas em cadeira de rodas. Consulte a equipe para confirmar horários e disponibilidade.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Clínica Dr. Leandro Possato · Odontologia em Cambuí, MG</span>
+      <a href="https://wa.me/5535999462846" target="_blank" rel="noopener noreferrer">Fale com a equipe ↗</a>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navigation = document.querySelector('.nav-area');
+
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      navigation.classList.toggle('open', !isExpanded);
+    });
+
+    navigation.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuButton.setAttribute('aria-expanded', 'false');
+        navigation.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
